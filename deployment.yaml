@@ -14,7 +14,7 @@ spec:
         name: web-httpd
     spec:
       containers:
-        - image: 723165663216.dkr.ecr.ap-northeast-2.amazonaws.com/server:web
+        - image: public.ecr.aws/p2p3j0y9/woohyung:latest
           name: web-container
           ports:
             - containerPort: 80
