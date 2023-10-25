@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: server
+  name: web-httpd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: web-httpd
+  template:
+    metadata:
+      labels:
+        name: web-httpd
+    spec:
+      containers:
+        - image: 723165663216.dkr.ecr.ap-northeast-2.amazonaws.com/server:web
+          name: web-container
+          ports:
+            - containerPort: 80
+      imagePullSecrets:
+      - name: ecr-credentials
+
+---
+apiVersion : apps/v1 
+kind : Deployment 
+metadata :
+  namespace : server 
+  name : was 
+spec :
+ replicas : 3 
+ selector :
+    matchLabels :
+      name : was  
+ template :
+    metadata :
+      labels :
+        name : was    
+    spec :
+      containers :
+        - image : 723165663216.dkr.ecr.ap-northeast-2.amazonaws.com/server:was
+          name : was-containers  
+          ports :
+            - containerPort : 8000   
+      imagePullSecrets:
+      - name: ecr-credentials
