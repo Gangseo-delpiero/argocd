@@ -19,7 +19,7 @@ metadata:
   name: was
 spec:
   type: ClusterIP
-  clusterIP: 10.111.111.111
+  clusterIP: 10.100.100.100
   ports:
   - port: 8000
     protocol: TCP
