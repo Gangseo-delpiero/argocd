@@ -14,7 +14,7 @@ spec:
         name: web-httpd
     spec:
       containers:
-        - image: 723926525504.dkr.ecr.ap-northeast-2.amazonaws.com/songjihun:latest
+        - image: 723926525504.dkr.ecr.ap-northeast-2.amazonaws.com/songjihun:latest_
           name: web-container
           ports:
             - containerPort: 80
@@ -35,7 +35,7 @@ spec:
         name: was  
     spec:
       containers:
-        - image: 723926525504.dkr.ecr.ap-northeast-2.amazonaws.com/songjihun:latest
+        - image: 723926525504.dkr.ecr.ap-northeast-2.amazonaws.com/songjihun:latest_
           name: was-containers
           ports:
             - containerPort: 8000
