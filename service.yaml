@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: server
+  name: web-httpd
+spec:
+  type: NodePort
+  ports:
+    - port: 800
+      targetPort: 800
+      protocol: TCP
+  selector:
+    name: web-httpd
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: server
+  name: was
+spec:
+  type: ClusterIP
+  clusterIP: 172.21.21.21
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    name: was
